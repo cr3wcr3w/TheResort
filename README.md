@@ -37,6 +37,11 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npx astro build && npx wrangler dev` | Preview your project locally with Wrangler |
+| `npx astro build && npx wrangler deploy` | Deploy using npx wrangler deploy  |
+
+docs: 
+https://docs.astro.build/en/guides/deploy/cloudflare/
 
 ## 👀 Want to learn more?
 
