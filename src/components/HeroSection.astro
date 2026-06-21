@@ -1,0 +1,164 @@
+<section class="relative mt-16 h-[calc(100dvh-4rem)] overflow-hidden md:mt-20 md:h-[calc(100dvh-5rem)]">
+    <img
+        src="/hero.jpg"
+        alt="The Palm Resort pool, palms, and mountain scenery"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+    />
+    <div class="absolute inset-0 bg-black/42"></div>
+    <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,.12),rgba(0,0,0,.68)),linear-gradient(180deg,rgba(8,19,17,.72),rgba(8,19,17,.18)_42%,rgba(8,19,17,.78))]"
+    >
+    </div>
+
+    <header
+        class="fixed inset-x-0 top-0 z-50 h-16 border-b border-white/12 bg-[#172a25]/78 text-white shadow-lg shadow-black/10 backdrop-blur-md md:h-20"
+    >
+        <div
+            class="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-8 lg:px-12"
+        >
+            <a
+                href="#home"
+                class="font-highlight text-lg font-bold transition duration-300 hover:text-[#f7d891] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891] sm:text-xl"
+            >
+                The Palm
+            </a>
+
+            <nav
+                class="hidden items-center gap-7 rounded-full bg-white/8 px-5 py-3 text-[11px] font-bold uppercase tracking-[.18em] text-white/82 md:flex"
+            >
+                <a href="#rooms" class="transition duration-300 hover:-translate-y-0.5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891]">Rooms</a>
+                <a href="#dining" class="transition duration-300 hover:-translate-y-0.5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891]">Dining</a>
+                <a href="#events" class="transition duration-300 hover:-translate-y-0.5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891]">Events</a>
+                <a href="#amenities" class="transition duration-300 hover:-translate-y-0.5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891]">Amenities</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <a
+                    href="#book"
+                    class="hidden rounded-full bg-white px-4 py-2 text-xs font-bold text-[#26332d] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#f7d891] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891] sm:inline-flex sm:px-5"
+                >
+                    Book now
+                </a>
+                <button
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    data-menu-toggle
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/18 bg-white/10 transition duration-300 hover:scale-105 hover:bg-white/18 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f7d891] md:hidden"
+                >
+                    <span class="relative h-4 w-4">
+                        <span data-menu-line="top" class="absolute left-0 top-0 block h-0.5 w-4 rounded-full bg-white transition duration-300"></span>
+                        <span data-menu-line="middle" class="absolute left-0 top-[7px] block h-0.5 w-4 rounded-full bg-white transition duration-300"></span>
+                        <span data-menu-line="bottom" class="absolute bottom-0 left-0 block h-0.5 w-4 rounded-full bg-white transition duration-300"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <nav
+            data-mobile-menu
+            class="grid grid-rows-[0fr] border-t border-white/12 bg-[#172a25]/96 px-4 opacity-0 shadow-xl shadow-black/20 transition-[grid-template-rows,opacity,padding] duration-300 ease-out pointer-events-none md:hidden"
+        >
+            <div class="grid min-h-0 gap-2 overflow-hidden text-sm font-bold uppercase tracking-[.18em] text-white/82">
+                <a href="#rooms" class="rounded-md px-3 py-3 transition duration-300 hover:translate-x-1 hover:bg-white/8 hover:text-white">Rooms</a>
+                <a href="#dining" class="rounded-md px-3 py-3 transition duration-300 hover:translate-x-1 hover:bg-white/8 hover:text-white">Dining</a>
+                <a href="#events" class="rounded-md px-3 py-3 transition duration-300 hover:translate-x-1 hover:bg-white/8 hover:text-white">Events</a>
+                <a href="#amenities" class="rounded-md px-3 py-3 transition duration-300 hover:translate-x-1 hover:bg-white/8 hover:text-white">Amenities</a>
+                <a
+                    href="#book"
+                    class="mb-4 mt-2 rounded-full bg-white px-4 py-3 text-center text-xs font-bold text-[#26332d] transition duration-300 hover:bg-[#f7d891] hover:shadow-lg"
+                >
+                    Book now
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="home" class="relative z-10 h-full px-4 text-center text-white">
+        <div
+            class="flex h-full items-center justify-center pb-28 [transform:translateY(-2rem)] md:pb-20 md:[transform:translateY(-2.5rem)]"
+        >
+            <div
+                class="max-w-3xl rounded-sm bg-black/24 px-5 py-7 shadow-2xl shadow-black/25 backdrop-blur-[2px] sm:px-8"
+            >
+                <p
+                    class="reveal reveal-down text-xs font-bold uppercase tracking-[.28em] text-[#f7d891]"
+                >
+                    Farm resort and nature escape
+                </p>
+                <h1
+                    class="reveal reveal-up mt-5 font-highlight text-4xl font-bold leading-[1.03] text-white drop-shadow-[0_3px_16px_rgba(0,0,0,.55)] sm:text-6xl lg:text-7xl"
+                >
+                    Where time slows,<br class="hidden sm:block" /> comfort
+                    deepens
+                </h1>
+                <p
+                    class="reveal reveal-up reveal-delay-1 mx-auto mt-6 max-w-xl text-sm font-medium leading-7 text-white/92 drop-shadow-[0_2px_10px_rgba(0,0,0,.5)] sm:text-base"
+                >
+                    Stay close to palms, rice fields, mountain air, and the
+                    quiet rhythm of The Palm Resort.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="absolute inset-x-4 bottom-5 mx-auto max-w-sm overflow-hidden rounded-sm border border-white/18 bg-[#172a25]/82 text-left shadow-2xl shadow-black/25 backdrop-blur-md sm:bottom-8 md:left-auto md:right-8 md:mx-0 md:w-80 lg:right-12 lg:w-96"
+        >
+            <div class="aspect-video bg-black">
+                <iframe
+                    class="h-full w-full"
+                    src="https://www.youtube.com/embed/gXW1651V0qc"
+                    title="The Palm Resort video"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="hidden px-4 py-3 sm:block">
+                <p class="text-xs font-bold uppercase tracking-[.2em] text-[#f7d891]">
+                    Resort film
+                </p>
+                <p class="mt-1 text-sm font-semibold text-white/88">
+                    Watch the atmosphere before you arrive.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const menuToggle = document.querySelector("[data-menu-toggle]");
+    const mobileMenu = document.querySelector("[data-mobile-menu]");
+    const mobileLinks = mobileMenu?.querySelectorAll("a") ?? [];
+    const menuLines = {
+        top: document.querySelector('[data-menu-line="top"]'),
+        middle: document.querySelector('[data-menu-line="middle"]'),
+        bottom: document.querySelector('[data-menu-line="bottom"]'),
+    };
+
+    const setMenuOpen = (isOpen) => {
+        menuToggle?.setAttribute("aria-expanded", String(isOpen));
+        mobileMenu?.classList.toggle("grid-rows-[0fr]", !isOpen);
+        mobileMenu?.classList.toggle("grid-rows-[1fr]", isOpen);
+        mobileMenu?.classList.toggle("opacity-0", !isOpen);
+        mobileMenu?.classList.toggle("opacity-100", isOpen);
+        mobileMenu?.classList.toggle("py-4", isOpen);
+        mobileMenu?.classList.toggle("pointer-events-none", !isOpen);
+        menuLines.top?.classList.toggle("translate-y-[7px]", isOpen);
+        menuLines.top?.classList.toggle("rotate-45", isOpen);
+        menuLines.middle?.classList.toggle("opacity-0", isOpen);
+        menuLines.bottom?.classList.toggle("-translate-y-[7px]", isOpen);
+        menuLines.bottom?.classList.toggle("-rotate-45", isOpen);
+    };
+
+    menuToggle?.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!isOpen);
+    });
+
+    mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            setMenuOpen(false);
+        });
+    });
+</script>

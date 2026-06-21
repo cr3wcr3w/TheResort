@@ -1,11 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import AboutSection from "../components/AboutSection.astro";
+import AmenitiesSection from "../components/AmenitiesSection.astro";
+import BookingSection from "../components/BookingSection.astro";
+import DiningSection from "../components/DiningSection.astro";
+import EventsSection from "../components/EventsSection.astro";
+import FooterSection from "../components/FooterSection.astro";
+import HeroSection from "../components/HeroSection.astro";
+import IntroSection from "../components/IntroSection.astro";
+import RoomsSection from "../components/RoomsSection.astro";
 ---
 
 <Layout>
-    <div class="font-body bg-white flex flex-col">
-        <section>
-            <h1 class="reveal reveal-up reveal-delay-1">hello</h1>
-        </section>
-    </div>
+    <main class="w-full bg-[#f7f1e7] text-[#26332d]">
+        <HeroSection />
+        <IntroSection />
+        <RoomsSection />
+        <EventsSection />
+        <DiningSection />
+        <AboutSection />
+        <AmenitiesSection />
+        <BookingSection />
+        <FooterSection />
+    </main>
 </Layout>

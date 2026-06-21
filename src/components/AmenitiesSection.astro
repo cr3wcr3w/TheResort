@@ -1,0 +1,35 @@
+---
+const experiences = [
+    "Poolside afternoons",
+    "Al fresco dining",
+    "Garden celebrations",
+    "Mountain-view mornings",
+    "Team gatherings",
+    "Quiet farm walks",
+];
+---
+
+<section id="amenities" class="bg-white px-4 py-16 text-center sm:px-8 sm:py-20 lg:px-12">
+    <p class="reveal text-xs font-bold uppercase tracking-[.26em] text-[#7c8351]">
+        Explore
+    </p>
+    <h2
+        class="reveal reveal-up reveal-delay-1 mt-3 font-highlight text-3xl font-bold sm:text-4xl"
+    >
+        Resort moments
+    </h2>
+    <div class="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-3">
+        {
+            experiences.map((item, index) => (
+                <div class={`reveal reveal-up reveal-delay-${index + 1} relative overflow-hidden shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#26332d]/10`}>
+                    <div
+                        class={`aspect-square w-full transition duration-300 ${index % 2 === 0 ? "bg-[#f3eddf] hover:bg-[#eee3d0]" : "bg-[#e8ecdf] hover:bg-[#dfe7d5]"}`}
+                    />
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-left transition duration-300">
+                        <p class="text-xs font-bold text-white sm:text-sm">{item}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>

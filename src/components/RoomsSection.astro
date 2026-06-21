@@ -1,0 +1,260 @@
+---
+const sharedFeatures = [
+    "Fully Airconditioned",
+    "Double Size Bed",
+    "Private Toilet with Hot and Cold Shower",
+    "Toiletries and Towels",
+    "Free WIFI Access",
+    "Telephone",
+    "Pool Access",
+    "Work Station",
+    "Smart TV",
+];
+
+const roomGroups = [
+    {
+        category: "Standard Room",
+        summary: "Budget-friendly rooms for simple, comfortable stays.",
+        rooms: [
+            {
+                name: "Acai Room",
+                description: "A room specially designed for solo traveler on a budget.",
+                capacity: "Good for 2 pax | Maximum Capacity of 3 pax",
+                features: sharedFeatures,
+            },
+            {
+                name: "Bismarck Room",
+                description: "A room designed to cater family traveler on a budget.",
+                capacity: "Good for 2 pax | Maximum Capacity of 4 pax",
+                features: sharedFeatures,
+            },
+        ],
+    },
+    {
+        category: "Deluxe Rooms",
+        summary: "Relaxed rooms for couples and barkada staycations.",
+        rooms: [
+            {
+                name: "Silver Room",
+                description: "A room specially designed for couple traveler.",
+                capacity: "Good for 2 pax | Maximum Capacity of 4 pax",
+                features: sharedFeatures,
+            },
+            {
+                name: "Oliva Room",
+                description:
+                    "A room specially designed for an ultimate barkada staycation.",
+                capacity: "Good for 4 pax | Maximum Capacity of 6 pax",
+                features: sharedFeatures,
+            },
+        ],
+    },
+    {
+        category: "Superior Room",
+        summary: "A larger stay with a panoramic Mt. Isarog view.",
+        rooms: [
+            {
+                name: "Peach Room",
+                description:
+                    "Live, Work and Play in our largest deluxe room with a panoramic view of Mt. Isarog.",
+                capacity: "Good for 3 pax | Maximum Capacity of 5 pax",
+                features: sharedFeatures,
+            },
+        ],
+    },
+    {
+        category: "Family Room",
+        summary: "Villas designed for families, groups, and private gatherings.",
+        rooms: [
+            {
+                name: "Thatch Villa",
+                description: "A Bali inspired villa with a scenic view of nature.",
+                capacity: "Good for 4 pax | Maximum Capacity of 6 pax",
+                features: sharedFeatures,
+            },
+            {
+                name: "Windmill Villa",
+                description: "A Bali inspired villa with a scenic view of nature.",
+                capacity: "Good for 4 pax | Maximum Capacity of 6 pax",
+                features: sharedFeatures,
+            },
+            {
+                name: "California Villa",
+                description:
+                    "Our largest villa specially designed for big groups and private gatherings.",
+                capacity: "Good for 8 pax | Maximum Capacity of 12 pax",
+                features: sharedFeatures,
+            },
+        ],
+    },
+];
+---
+
+<section id="rooms" class="bg-white px-4 py-16 sm:px-8 sm:py-20 lg:px-12">
+    <div class="mx-auto max-w-6xl">
+        <div class="mb-10 text-center">
+            <p class="reveal text-xs font-bold uppercase tracking-[.26em] text-[#7c8351]">
+                Rooms and suites
+            </p>
+            <h2
+                class="reveal reveal-up reveal-delay-1 mt-3 font-highlight text-3xl font-bold sm:text-4xl"
+            >
+                Choose your room
+            </h2>
+            <p
+                class="reveal reveal-up reveal-delay-2 mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#687064] sm:text-base"
+            >
+                Browse each room type, then open a room to see its capacity and
+                included features.
+            </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-4">
+            {
+                roomGroups.map((group, groupIndex) => (
+                    <article
+                        class={`group reveal reveal-up reveal-delay-${groupIndex + 1} flex min-h-full flex-col border border-[#e6dece] bg-[#f7f1e7] p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-[#cfc3ae] hover:shadow-xl hover:shadow-[#26332d]/10`}
+                    >
+                        <div class="aspect-[4/5] w-full rounded-sm bg-white transition duration-300 group-hover:bg-[#fbf8f0]" />
+                        <div class="flex flex-1 flex-col pt-5">
+                            <h3 class="font-highlight text-2xl font-bold">
+                                {group.category}
+                            </h3>
+                            <p class="mt-2 text-sm leading-6 text-[#687064]">
+                                {group.summary}
+                            </p>
+                            <div class="mt-6 grid gap-2">
+                                {group.rooms.map((room) => (
+                                    <button
+                                        type="button"
+                                        data-room-trigger
+                                        data-room-name={room.name}
+                                        data-room-category={group.category}
+                                        data-room-description={room.description}
+                                        data-room-capacity={room.capacity}
+                                        data-room-features={JSON.stringify(room.features)}
+                                        class="group flex min-h-12 items-center justify-between gap-3 rounded-sm border border-[#d8cfbd] bg-white px-4 py-3 text-left text-sm font-bold text-[#26332d] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#7c8351] hover:bg-[#f9f5ec] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7c8351]"
+                                    >
+                                        <span>{room.name}</span>
+                                        <span aria-hidden="true" class="text-[#7c8351] transition duration-300 group-hover:translate-x-1">View</span>
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+    </div>
+
+    <div
+        data-room-modal
+        class="fixed inset-0 z-[80] hidden items-center justify-center bg-[#101916]/70 px-4 py-6 backdrop-blur-sm"
+        aria-hidden="true"
+    >
+        <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="room-modal-title"
+            class="max-h-[90dvh] w-full max-w-2xl overflow-y-auto bg-[#f7f1e7] p-5 text-[#26332d] shadow-2xl shadow-black/30 sm:p-7"
+        >
+            <div class="flex items-start justify-between gap-5">
+                <div>
+                    <p
+                        data-room-modal-category
+                        class="text-xs font-bold uppercase tracking-[.24em] text-[#7c8351]"
+                    >
+                    </p>
+                    <h3
+                        id="room-modal-title"
+                        data-room-modal-name
+                        class="mt-2 font-highlight text-3xl font-bold"
+                    >
+                    </h3>
+                </div>
+                <button
+                    type="button"
+                    data-room-modal-close
+                    aria-label="Close room details"
+                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-2xl leading-none text-[#26332d] transition duration-300 hover:scale-105 hover:bg-[#26332d] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7c8351]"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <div class="mt-6 aspect-[16/9] w-full bg-white"></div>
+
+            <p
+                data-room-modal-description
+                class="mt-6 text-base leading-7 text-[#4f5b54]"
+            >
+            </p>
+            <p
+                data-room-modal-capacity
+                class="mt-4 rounded-sm bg-white px-4 py-3 text-sm font-bold text-[#26332d]"
+            >
+            </p>
+
+            <div class="mt-6">
+                <p class="font-highlight text-xl font-bold">Room features</p>
+                <ul
+                    data-room-modal-features
+                    class="mt-4 grid gap-3 text-sm text-[#4f5b54] sm:grid-cols-2"
+                >
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const roomModal = document.querySelector("[data-room-modal]");
+    const roomModalName = document.querySelector("[data-room-modal-name]");
+    const roomModalCategory = document.querySelector("[data-room-modal-category]");
+    const roomModalDescription = document.querySelector("[data-room-modal-description]");
+    const roomModalCapacity = document.querySelector("[data-room-modal-capacity]");
+    const roomModalFeatures = document.querySelector("[data-room-modal-features]");
+    const roomModalClose = document.querySelector("[data-room-modal-close]");
+    const roomTriggers = document.querySelectorAll("[data-room-trigger]");
+
+    const closeRoomModal = () => {
+        roomModal?.classList.add("hidden");
+        roomModal?.classList.remove("flex");
+        roomModal?.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    };
+
+    roomTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+            const features = JSON.parse(trigger.dataset.roomFeatures ?? "[]");
+
+            if (roomModalName) roomModalName.textContent = trigger.dataset.roomName ?? "";
+            if (roomModalCategory) roomModalCategory.textContent = trigger.dataset.roomCategory ?? "";
+            if (roomModalDescription) {
+                roomModalDescription.textContent = trigger.dataset.roomDescription ?? "";
+            }
+            if (roomModalCapacity) roomModalCapacity.textContent = trigger.dataset.roomCapacity ?? "";
+            if (roomModalFeatures) {
+                roomModalFeatures.innerHTML = features
+                    .map(
+                        (feature) =>
+                            `<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7c8351]"></span><span>${feature}</span></li>`,
+                    )
+                    .join("");
+            }
+
+            roomModal?.classList.remove("hidden");
+            roomModal?.classList.add("flex");
+            roomModal?.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    roomModalClose?.addEventListener("click", closeRoomModal);
+    roomModal?.addEventListener("click", (event) => {
+        if (event.target === roomModal) closeRoomModal();
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeRoomModal();
+    });
+</script>
