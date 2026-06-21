@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap");
+
+@theme {
+    --font-body: "Source Sans 3", sans-serif;
+    --font-highlight: "Source Serif 4", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+.font-body {
+    font-family: var(--font-body);
+}
+
+.font-highlight {
+    font-family: var(--font-highlight);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    animation: reveal-enter var(--reveal-duration, 0.6s)
+        var(--reveal-easing, ease-out) var(--reveal-delay, 0s) forwards;
+}
+
+.reveal-up {
+    transform: translateY(20px);
+}
+
+.reveal-down {
+    transform: translateY(-20px);
+}
+
+.reveal-left {
+    transform: translateX(20px);
+}
+
+.reveal-right {
+    transform: translateX(-20px);
+}
+
+.reveal-fast {
+    --reveal-duration: 0.35s;
+}
+
+.reveal-slow {
+    --reveal-duration: 0.9s;
+}
+
+.reveal-delay,
+.reveal-delay-1 {
+    --reveal-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+    --reveal-delay: 0.3s;
+}
+
+.reveal-delay-3 {
+    --reveal-delay: 0.45s;
+}
+
+.reveal-delay-4 {
+    --reveal-delay: 0.6s;
+}
+
+.reveal-delay-5 {
+    --reveal-delay: 0.75s;
+}
+
+.reveal-delay-6 {
+    --reveal-delay: 0.9s;
+}
+
+.reveal-delay-7 {
+    --reveal-delay: 1.05s;
+}
+
+.reveal-delay-8 {
+    --reveal-delay: 1.2s;
+}
+
+.reveal-delay-9 {
+    --reveal-delay: 1.35s;
+}
+
+.reveal-delay-10 {
+    --reveal-delay: 1.5s;
+}
+
+.reveal-delay-11 {
+    --reveal-delay: 1.65s;
+}
+
+.reveal-delay-12 {
+    --reveal-delay: 1.8s;
+}
+
+.reveal-delay-13 {
+    --reveal-delay: 1.95s;
+}
+
+.reveal-delay-14 {
+    --reveal-delay: 2.1s;
+}
+
+.reveal-delay-15 {
+    --reveal-delay: 2.25s;
+}
+
+.reveal-delay-16 {
+    --reveal-delay: 2.4s;
+}
+
+.reveal-delay-17 {
+    --reveal-delay: 2.55s;
+}
+
+.reveal-delay-18 {
+    --reveal-delay: 2.7s;
+}
+
+.reveal-delay-19 {
+    --reveal-delay: 2.85s;
+}
+
+.reveal-delay-20 {
+    --reveal-delay: 3s;
+}
+
+@keyframes reveal-enter {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal.is-visible {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
